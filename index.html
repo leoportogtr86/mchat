@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <title>M-CHAT R/F</title>
+  </head>
+  <body>
+    <h1 class="text-center text-danger mb-5">Questionário M-CHAT R/F</h1>
+
+    <div class="container-fluid form" id = 'form'>
+        
+        
+            <div class="row m-5">
+                <input type="text" class="m-auto" id = 'nome_cri' placeholder="Nome da Criança" required>
+                
+            </div>
+            <div class="row m-5">
+                
+                <select name="idade" id="idade" class="m-auto">
+    
+                    <option value="">Idade</option>
+                    <option value="1">1 anos</option>
+                    <option value="2">2 anos</option>
+                    <option value="3">3 anos</option>
+                    <option value="4">4 anos</option>
+                    <option value="5">5 anos</option>
+                    <option value="6">6 anos</option>
+                    <option value="7">7 anos</option>
+                    <option value="8">8 anos</option>
+                    <option value="9">9 anos</option>
+                    <option value="10">10 anos</option>
+                </select>
+                
+            </div>
+            <div class="row m-5">
+                <input type="text" class="m-auto" id = 'nome_resp' placeholder="Nome do Responsável" required>
+                
+            </div>
+    
+            <div class="row m-5">
+                <button class="btn btn-danger btn-lg m-auto" type="button" id = 'iniciar'>Iniciar o Questionário</button>
+                
+            </div>
+    
+        
+
+        
+    </div>
+
+    <div class="container-fluid">
+        <div class="card" id = 'card1'>
+
+            <img src="./assets//img/1.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">Se você apontar para qualquer 
+                    coisa do outro lado da sala, a
+                     criança olha para o que você
+                     apontando?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q1Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q1'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card2'>
+
+            <img src="./assets//img/2.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">Você já se perguntou se a sua criança pode ser surda?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q2'>Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q2Next'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card3'>
+
+            <img src="./assets//img/3.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança brinca de faz-de-conta?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q3Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q3'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card4'>
+
+            <img src="./assets//img/4.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança gosta de subir nas coisas?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q4Next'>Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q4'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card5'>
+
+            <img src="./assets//img/5.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança faz movimentos estranhos com os dedos perto dos olhos?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q5'>Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q5Next'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card6'>
+
+            <img src="./assets//img/6.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança aponta com um dedo para pedir algo ou para conseguir alguma coisa?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q6Next'>Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q6'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card7'>
+
+            <img src="./assets//img/7.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança aponta com um dedo para mostrar algo interessante para você?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q7Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q7'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card8'>
+
+            <img src="./assets//img/8.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança se interessa por outras crianças?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q8Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q8'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card9'>
+
+            <img src="./assets//img/9.jpeg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança mostra coisas para você trazendo ou lenvantando-as para que as veja?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q9Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q9'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card10'>
+
+            <img src="./assets//img/10.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança responde quando é chamada pelo nome?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q10Next'>Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q10'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card11'>
+
+            <img src="./assets//img/11.jpeg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">Quando você sorri, a sua criança sorri de volta?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q11Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q11'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card12'>
+
+            <img src="./assets//img/12.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança fica incomodada com os ruídos do dia a dia?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q12'>Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q12Next'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card13'>
+
+            <img src="./assets//img/13.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança já anda (andou)? (até 2 anos)</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q13Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q13'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card14'>
+
+            <img src="./assets//img/14.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança olha nos seus olhos quando você fala com ela, brinca com ela ou veste ela?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q14Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q14'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card15'>
+
+            <img src="./assets//img/15.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança tenta imitar aquilo que você faz?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q15Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q15'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card16'>
+
+            <img src="./assets//img/16.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">Se você virar a sua cabeça para olhar algo, a sua criança olha junto?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q16Next'>Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q16'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card17'>
+
+            <img src="./assets//img/17.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança tenta para que você olhe pra ela?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg" id = 'q17Next'>Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q17'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card18'>
+
+            <img src="./assets//img/18.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança compreende quando você lhe diz para fazer alguma coisa?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q18Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q18'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card19'>
+
+            <img src="./assets//img/19.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">Quando acontece alguma coisa nova, a sua criança olha para a sua cara para ver sua reação?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q19Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q19'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="card" id = 'card20'>
+
+            <img src="./assets//img/20.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+
+                <h5 class="card-title">A sua criança gosta de atividades com movimento?</h5>
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <button class="btn btn-success btn-lg"id = 'q20Next' >Sim</button>
+
+
+                    </div>
+
+                    <div class="col">
+                        
+                        <button class="btn btn-danger btn-lg" id = 'q20'>Não</button>
+
+
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+        <div class="alert alert-primary" id = 'score'>
+            <h1>Score</h1>
+            <h2 id = 'pontos'>Pontos...</h2>
+            <h3 id = 'risco'>Risco</h3>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>  
+</body>
+</html>

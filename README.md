@@ -1,0 +1,1 @@
+Questionário m-chat para pontuação e ajuda na avaliação e diagnóstico do espectro autista.
